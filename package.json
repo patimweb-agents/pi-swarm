@@ -20,10 +20,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Smotherer007/pi-swarm.git"
+    "url": "git+https://github.com/patimweb-agents/pi-swarm.git"
   },
   "bugs": {
-    "url": "https://github.com/Smotherer007/pi-swarm/issues"
+    "url": "https://github.com/patimweb-agents/pi-swarm/issues"
   },
   "scripts": {
     "build": "echo 'No build step defined'",

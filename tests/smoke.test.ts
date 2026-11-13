@@ -84,7 +84,7 @@ describe("Package manifest", () => {
   it("points at the repository the pipeline publishes from", () => {
     // npm normalizes this to the git+ prefix on publish; declaring it that way
     // keeps the release log free of "npm auto-corrected your package.json".
-    assert.equal(manifest.repository?.url, "git+https://github.com/Smotherer007/pi-swarm.git");
+    assert.equal(manifest.repository?.url, "git+https://github.com/patimweb-agents/pi-swarm.git");
     assert.equal(manifest.publishConfig?.access, "public");
   });
 });

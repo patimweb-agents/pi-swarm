@@ -117,7 +117,10 @@ describe("file transfer", () => {
     assert.equal(fs.readFileSync(accepted.storedPath, "utf-8"), "zahlen, die nur im file stehen\n");
 
     // Stored under the transfer id, inside the sender's directory.
-    assert.match(accepted.storedPath, new RegExp(`${hostFiles}.*f_[a-f0-9]+\\.bin$`));
+    // Escaped: Windows paths are full of backslashes, which a RegExp would read
+    // as escapes (\p, \U, \A ...) and never match.
+    const hostFilesRe = hostFiles.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    assert.match(accepted.storedPath, new RegExp(`${hostFilesRe}.*f_[a-f0-9]+\\.bin$`));
 
     const listed = host.receivedFiles();
     assert.equal(listed.length, 1);
